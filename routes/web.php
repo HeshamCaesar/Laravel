@@ -31,7 +31,7 @@ Route::get('/blogs/{id}','BlogController@destroy')->name('blog.destroy');
 Route::get('/blogs/show/{id}','BlogController@show')->name('blog.show');
 Route::get('/blogs/edit/{id}','BlogController@edit')->name('blog.edit');
 Route::put('/blogs/{id}/edit','BlogController@update')->name('blog.update');
-Route::put('/blogs/ajax/table','BlogController@table')->name('blog.table');
+Route::get('/blogs/ajax/table','BlogController@table')->name('blog.table');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -20,9 +20,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href = {{ asset("bootstrap/css/bootstrap.css") }} rel="stylesheet" />
-    <link href = {{ asset("bootstrap/css/sticky-footer-navbar.css") }} rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
+    <link href =  "bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href ="bootstrap/css/sticky-footer-navbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 </head>
 <body>
     <div id="app">

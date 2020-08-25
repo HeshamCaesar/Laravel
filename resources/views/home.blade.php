@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <a class="btn btn-primary" href="{{route('blog.index')}}">All BLogs</a>
                 </div>
             </div>
         </div>

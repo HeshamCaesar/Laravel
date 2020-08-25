@@ -12,7 +12,6 @@ $.ajax({
 );
 function getAllBLogs()
 {
-    
     $.ajax({
         type:'GET',
         url:'/blogs/ajax/table',
@@ -65,7 +64,6 @@ $(document).on('click','.editBlog',function () {
 $(document).on('submit','#modal-editBlog form',function(e){
     e.preventDefault();
     const action = $(this).attr('action');
-    console.log(action);
     let form = new FormData($(this)[0]);
 
     $.ajax({
@@ -83,21 +81,16 @@ $(document).on('submit','#modal-editBlog form',function(e){
 });
 $(document).on('click', '.delete', function(){
     var id = $(this).attr('blog_id');
-    if(confirm("Are you sure you want to Delete this data?"))
-    {
+    
         $.ajax({
-            url:"{{route('blog.destroy')}}",
+            url:"/blogs/"+id,
             mehtod:"get",
-            data:{id:id},
+            data:"id="+id,
             success:function(data)
             {
-                alert(data);
-                $('#blog-table').DataTable().ajax.reload();
+                
+                getAllBLogs();
             }
         })
-    }
-    else
-    {
-        return false;
-    }
+    
 }); 

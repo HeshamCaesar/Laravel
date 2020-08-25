@@ -16,8 +16,8 @@
             <td>{{$blog->title}}</td>
             <td>{{$blog->description}}</td>
             <td>{{$blog->users->name}}</td>
-            <td><a href="{{route('blog.destroy',$blog)}}" class="btn btn-danger">Delete</a>
-            <button blog_id="{{$blog->id}}" url="{{route('blog.update',$blog)}}" data-toggle="modal" data-target="#modal-editBlog" class="btn btn-info editBlog">Edit</button>
+            <td><a blog_id="{{$blog->id}}" class="btn btn-danger delete" >Delete</a>
+            <button blog_id="{{$blog->id}}" url="{{route('blog.update',$blog->id)}}" data-toggle="modal" data-target="#modal-editBlog" class="btn btn-info editBlog">Edit</button>
             <button class="btn btn-warning" data-toggle="modal" data-target="#modal-showBlog" id="show-Blog" blog_id={{$blog->id}}>Show</button></td>
             </tr>
         @endforeach

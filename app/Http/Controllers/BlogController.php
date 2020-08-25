@@ -44,10 +44,10 @@ class BlogController extends Controller
         $blog = new Blog();
         $blog->title=  $request['title'];
         $blog->description =  $request['description'];
-        $blog->user_id = 1;
+        $blog->user_id = \Auth::user()->id;
         // dd($blog);
         $blog->save();
-         return redirect(route('blog.index'));
+        //  return redirect(route('blog.index'));
     }
 
     /**
@@ -79,12 +79,12 @@ class BlogController extends Controller
      * @param  \App\blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, blog $BLog)
-    {   $BLog = BLog::find($id);
-        $BLog->title = $request->input('title');
-        $BLog->description = $request->input('description');
-        $BLog->user_id = \Auth::user()->id;
-        $BLog->save();
+    public function update(Request $request, $id)
+    {   $blog = BLog::find($id);
+        $blog->title = $request->input('title');
+        $blog->description = $request->input('description');
+        $blog->user_id = \Auth::user()->id;
+        $blog->save();
         // return redirect(route('blog.index'));
     }
 
@@ -98,6 +98,5 @@ class BlogController extends Controller
     {
        $bloga = Blog::find($id);
        $bloga->delete();
-       return redirect(route('blog.index'));
     }
 }
