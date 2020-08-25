@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 21, 2020 at 11:53 AM
+-- Generation Time: Aug 25, 2020 at 01:45 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `blogs` (
   `user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `blogs_user_id_foreign` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `blogs`
@@ -45,11 +45,8 @@ CREATE TABLE IF NOT EXISTS `blogs` (
 
 INSERT INTO `blogs` (`id`, `title`, `description`, `created_at`, `updated_at`, `user_id`) VALUES
 (1, 'web development', 'its very nice to learn', '2020-08-19 10:08:49', '2020-08-19 15:31:39', 6),
-(2, 'happy birthday', 'happy birthday to you', '2020-08-19 13:09:44', '2020-08-19 13:09:44', 1),
-(6, 'welcome to the world', 'your journey starts from now', '2020-08-20 22:30:34', '2020-08-20 22:30:34', 1),
-(7, 'new project', 'building new project wasn\'t easy', '2020-08-20 22:31:23', '2020-08-20 22:31:23', 1),
-(21, 'finally', 'finally it works', '2020-08-20 23:52:55', '2020-08-20 23:52:55', 1),
-(22, 'hehllo', 'hello world', '2020-08-20 23:54:44', '2020-08-20 23:54:44', 1);
+(35, 'happy birthday', 'Happy birthday to all my friends', '2020-08-24 22:34:08', '2020-08-24 22:34:08', 6),
+(36, 'Good Day', 'Having a coffee and a cup of juice', '2020-08-24 22:34:47', '2020-08-24 22:35:08', 6);
 
 -- --------------------------------------------------------
 
@@ -104,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -113,7 +110,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'hesham', 'hesham@gmail.com', NULL, '*E9D057131C22A0D76B4AAD2C61655BDFA706E637', NULL, NULL, NULL),
 (5, 'Hesham', 'Heshamsayed@yahoo.com', NULL, '$2y$10$1d64ywmeMAIaYAYTtgGdUuE0.iZYfoeb7G6qaTWZ8yA1NeYTbV4EW', NULL, '2020-08-19 11:34:12', '2020-08-19 11:34:12'),
-(6, 'Ahmed', 'Ahmed@gmail.com', NULL, '$2y$10$Xu6UJgtwoiurBvQMbMONju69jJFIBPZUG8kWHZzMeHwSPXvb5uz0e', NULL, '2020-08-19 13:10:35', '2020-08-19 13:10:35');
+(6, 'Ahmed', 'Ahmed@gmail.com', NULL, '$2y$10$Xu6UJgtwoiurBvQMbMONju69jJFIBPZUG8kWHZzMeHwSPXvb5uz0e', NULL, '2020-08-19 13:10:35', '2020-08-19 13:10:35'),
+(8, 'khaled', 'khaled@gmail.com', NULL, '$2y$10$C.lG79uLvYhUnEjRcvWIp.CMa94LWFbPUD4brMPzw7HWqGFybe3iC', NULL, '2020-08-24 20:36:01', '2020-08-24 20:36:01'),
+(9, 'ismail', 'ismail@gmail.com', NULL, '$2y$10$rU.gvUoYy473BTugXfVd.O5xaE43kDe9jX2OGZjuQHEb2SYzkQSRO', NULL, '2020-08-24 22:50:38', '2020-08-24 22:50:38');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
